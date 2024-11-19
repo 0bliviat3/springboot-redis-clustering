@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sign</title>
+
+    <script type="text/javascript" th:src="@{/js/sign.js}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script th:inline="javascript"> var contextPath = /*[[@{/}]]*/ ''; </script>
+</head>
+<body>
+    <h1 th:text="${data1}">test page</h1>
+    <div>
+        <label>
+           ID <input type="text" id="id" name="id">
+        </label>
+        <label>
+           PWD <input type="password" id="pwd" name="pwd">
+        </label>
+        <label>
+            <button th:onclick="sendData()">summit</button>
+        </label>
+    </div>
+    <div>
+        <a th:href="@{/sign/up-page}">회원 가입</a>
+    </div>
+</body>
+</html>

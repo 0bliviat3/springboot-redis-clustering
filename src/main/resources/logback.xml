@@ -1,0 +1,22 @@
+<configuration>
+
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+
+        <encoder>
+
+            <pattern>%d{HH:mm:ss.SSS} %magenta([%thread]) %clr(%-5level) %cyan(%logger{36}) -%kvp- %yellow(%msg%n)</pattern>
+
+        </encoder>
+
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+    <logger name="com.sample" level="DEBUG" />
+
+</configuration>
+

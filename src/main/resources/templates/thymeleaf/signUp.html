@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sign.js}"></script>
+    <script th:inline="javascript"> var contextPath = /*[[@{/}]]*/ ''; </script>
+</head>
+<body>
+    <div>
+        <label>
+            ID <input type="text" id="id" name="id">
+        </label>
+        <br>
+        <label>
+            PWD <input type="password" id="pwd" name="pwd">
+        </label>
+        <br>
+        <label>
+            name <input type="text" id="name" name="name">
+        </label>
+        <br>
+        <label>
+            <button th:onclick="sendSignUpData()">submit</button>
+        </label>
+    </div>
+</body>
+</html>
+
