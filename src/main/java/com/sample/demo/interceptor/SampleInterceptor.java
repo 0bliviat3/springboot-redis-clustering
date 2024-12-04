@@ -5,10 +5,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 @Slf4j
+@Component
 public class SampleInterceptor implements HandlerInterceptor {
 
     @Override
@@ -19,6 +21,8 @@ public class SampleInterceptor implements HandlerInterceptor {
         Object member = session.getAttribute("auth");
 
         String root = request.getContextPath();
+
+        log.debug("uri: " + request.getRequestURI());
 
         if (member == null) {
             response.sendRedirect(String.format("%s/sign/in-page", root));
