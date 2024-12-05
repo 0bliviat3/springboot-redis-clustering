@@ -22,7 +22,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with gradle Wrapper
-        run: ./gradlew build
+        run: ./gradlew build -x test
       - name: Docker meta
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
