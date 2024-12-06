@@ -23,7 +23,7 @@ public class WebMVCConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         log.debug("add cors config");
         registry.addMapping("/api/**")
-                .allowedOrigins("http://localhost:8081", "http://localhost:80") //개발용 소스
+                .allowedOriginPatterns("*") //개발용 소스
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowedHeaders("*")
                 .allowCredentials(true);
