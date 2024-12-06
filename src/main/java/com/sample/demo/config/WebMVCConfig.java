@@ -19,13 +19,13 @@ public class WebMVCConfig implements WebMvcConfigurer {
 
     }
 
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        log.debug("add cors config");
-        registry.addMapping("/api/**")
-                .allowedOriginPatterns("*") //개발용 소스
-                .allowedMethods("GET", "POST", "PUT", "DELETE")
-                .allowedHeaders("*")
-                .allowCredentials(true);
-    }
+//    @Override
+//    public void addCorsMappings(CorsRegistry registry) {
+//        log.debug("add cors config");
+//        registry.addMapping("/api/**")
+//                .allowedOriginPatterns("*") //개발용 소스
+//                .allowedMethods("GET", "POST", "PUT", "DELETE")
+//                .allowedHeaders("*")
+//                .allowCredentials(true);
+//    }
 }
