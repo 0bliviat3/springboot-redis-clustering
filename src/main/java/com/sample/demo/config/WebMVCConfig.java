@@ -8,6 +8,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
+@Slf4j
 public class WebMVCConfig implements WebMvcConfigurer {
 
     @Override
@@ -19,9 +20,10 @@ public class WebMVCConfig implements WebMvcConfigurer {
     }
 
     @Override
-    public void addCorsMappings(CorsRegistry registry) { //개발용 소스
+    public void addCorsMappings(CorsRegistry registry) {
+        log.debug("add cors config");
         registry.addMapping("/api/**")
-                .allowedOrigins("http://localhost:8081")
+                .allowedOrigins("http://localhost:8081", "http://localhost:80") //개발용 소스
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowedHeaders("*")
                 .allowCredentials(true);
